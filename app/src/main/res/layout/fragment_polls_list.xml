@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/polls_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CommonScreen">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/available_polls_list"
+            android:name="com.jasbuber.allpolls.PollsListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            tools:context="com.jasbuber.allpolls.PollsListFragment"
+            tools:listitem="@layout/fragment_polls_item" />
+
+        <TextView
+            android:id="@+id/no_available_polls_label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/no_available_polls"
+            android:textSize="16sp"
+            android:padding="50dp"/>
+
+        <TextView
+            android:id="@+id/no_server_connection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/unexpected_error"
+            android:textSize="16sp"
+            android:padding="50dp"/>
+    </RelativeLayout>
+
+</android.support.v4.widget.SwipeRefreshLayout>

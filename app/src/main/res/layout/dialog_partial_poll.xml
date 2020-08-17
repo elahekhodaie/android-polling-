@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_partial_poll_background"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/partial_poll_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:textSize="18sp" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/partial_pie_chart"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_below="@+id/partial_poll_title"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <TextView
+        android:id="@+id/dialog_last_updated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/partial_pie_chart"
+        android:gravity="right" />
+
+</RelativeLayout>

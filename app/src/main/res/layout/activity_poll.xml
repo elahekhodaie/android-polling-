@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.jasbuber.allpolls.PollActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:logo="@mipmap/logo" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:id="@+id/poll_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="40dp"
+                android:paddingTop="70dp"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/refresh_poll"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="15dip"
+                android:layout_marginTop="65dip"
+                android:background="@mipmap/refresh"
+                android:padding="20dp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/poll_pie_chart"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_below="@+id/poll_title"
+                android:layout_marginBottom="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="30dp" />
+
+            <TextView
+                android:id="@+id/partial_polls_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/poll_pie_chart"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="30dp"
+                android:text="@string/poles_used"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/poll_partial_polls"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/partial_polls_title"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="30dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_to_my_polls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/star_inactive" />
+
+</android.support.design.widget.CoordinatorLayout>

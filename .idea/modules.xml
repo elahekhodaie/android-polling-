@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/all-polls-android.iml" filepath="$PROJECT_DIR$/all-polls-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/polling_android.iml" filepath="$PROJECT_DIR$/.idea/modules/polling_android.iml" group="polling_android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/polling_android-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/polling_android-app.iml" group="polling_android/app" />
+    </modules>
+  </component>
+</project>

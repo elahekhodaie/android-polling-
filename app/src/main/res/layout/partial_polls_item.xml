@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/partial_poll_pollster"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/partial_poll_last_updated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/partial_poll_pollster"
+        android:layout_toRightOf="@+id/partial_poll_pollster" />
+
+    <TextView
+        android:id="@+id/partial_poll_provided_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/partial_poll_pollster"
+        android:text="@string/provided_by"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/partial_poll_provider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/partial_poll_pollster"
+        android:layout_toRightOf="@+id/partial_poll_provided_by"
+        android:textSize="12sp" />
+</RelativeLayout>
