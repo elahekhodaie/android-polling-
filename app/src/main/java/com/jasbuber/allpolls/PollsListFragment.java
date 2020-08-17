@@ -18,16 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PollsListFragment extends Fragment {
-
+    RecyclerView recyclerView;
     private int columnsNr = 1;
     private OnListFragmentInteractionListener mListener;
 
-    RecyclerView recyclerView;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public PollsListFragment() {
     }
 

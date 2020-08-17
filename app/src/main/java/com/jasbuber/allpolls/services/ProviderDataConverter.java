@@ -16,9 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created by Jasbuber on 11/06/2016.
- */
+
 public class ProviderDataConverter {
 
     public static final int POLSTERS_NR = 10;
@@ -26,7 +24,6 @@ public class ProviderDataConverter {
     public Poll fillPollWithProviderData(Poll poll, HashMap<String, JsonObject> data) {
 
         List<PartialPoll> toDelete = new ArrayList<>();
-
         List<PartialPoll> partialPolls = poll.getPartialPolls();
 
         for (PartialPoll partial : partialPolls) {
@@ -38,7 +35,6 @@ public class ProviderDataConverter {
         }
 
         partialPolls.removeAll(toDelete);
-
         poll.sortPartialsByDateDesc();
 
         if (partialPolls.size() >= POLSTERS_NR) {
@@ -64,11 +60,11 @@ public class ProviderDataConverter {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        JsonArray questions = data.get("questions").getAsJsonArray();
+        // the questions in each poll are handled in this part
 
+        JsonArray questions = data.get("questions").getAsJsonArray();
         for (int i = 0; i < questions.size(); i++) {
             JsonObject question = questions.get(i).getAsJsonObject();
-
             JsonElement qTopic = question.get("topic");
 
             if (!qTopic.isJsonNull() && qTopic.getAsString().toLowerCase().equals(topic)) {

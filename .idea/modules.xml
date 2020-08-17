@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desktop-android-polling-.iml" filepath="$PROJECT_DIR$/.idea/modules/Desktop-android-polling-.iml" group="android-polling-" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Desktop-android-polling--app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Desktop-android-polling--app.iml" group="android-polling-/app" />
       <module fileurl="file://$PROJECT_DIR$/all-polls-android.iml" filepath="$PROJECT_DIR$/all-polls-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-polling-.iml" filepath="$PROJECT_DIR$/.idea/modules/android-polling-.iml" group="android-polling-" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-polling--app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-polling--app.iml" group="android-polling-/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/polling_android.iml" filepath="$PROJECT_DIR$/.idea/modules/polling_android.iml" group="polling_android" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/polling_android-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/polling_android-app.iml" group="polling_android/app" />

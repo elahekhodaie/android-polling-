@@ -30,6 +30,8 @@ import retrofit2.http.Query;
 
 public class PollsService {
 
+    // the part we set the url of the web server holding the polls
+
     private static final String baseUrl = "https://allpolls.herokuapp.com/";
 
     public interface MainServerService {
