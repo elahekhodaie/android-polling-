@@ -30,17 +30,16 @@ import java.util.Map;
 
 public class PollActivity extends AppCompatActivity {
 
+    boolean isFavorite = false;
     Poll poll;
-
     PartialPoll selectedPartial;
-
     PieChart pieChart;
-
     boolean isPartialView = false;
-
     Dialog dialog;
 
-    boolean isFavorite = false;
+    // in this class each poll is shown with its pie chart
+
+
 
     private static final Double LABEL_DISPLAY_TRESHOLD = 7.0;
 
@@ -82,7 +81,6 @@ public class PollActivity extends AppCompatActivity {
                 }
             }
         });
-
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -212,7 +210,6 @@ public class PollActivity extends AppCompatActivity {
         isFavorite = savedInstance.getBoolean("isFavorite");
         isPartialView = savedInstance.getBoolean("isPartialView");
         poll = (Poll) savedInstance.getSerializable("poll");
-
         displayPieChart(poll);
         if (isPartialView) {
             selectedPartial = (PartialPoll) savedInstance.getSerializable("selectedPartial");
@@ -226,15 +223,6 @@ public class PollActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        if (dialog != null) {
-            dialog.dismiss();
-        }
-    }
-
     private void refreshPoll(ImageButton refresh) {
 
         if (PollsService.isNetworkAvailable(this)) {
@@ -245,7 +233,6 @@ public class PollActivity extends AppCompatActivity {
             Toast.makeText(this, this.getString(R.string.no_internet), Toast.LENGTH_LONG).show();
         }
     }
-
     private RotateAnimation getRotateAnimation() {
         RotateAnimation anim = new RotateAnimation(0.0f, 360.0f, Animation.RELATIVE_TO_SELF,
                 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -253,6 +240,16 @@ public class PollActivity extends AppCompatActivity {
         anim.setRepeatCount(Animation.INFINITE);
         anim.setDuration(700);
         return anim;
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (dialog != null) {
+            dialog.dismiss();
+        }
     }
 
 }

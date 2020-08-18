@@ -20,10 +20,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-
-/**
- * Created by Jasbuber on 11/06/2016.
- */
 public class ProviderService {
 
     private static final String baseUrl = "http://elections.huffingtonpost.com/pollster/api/";
