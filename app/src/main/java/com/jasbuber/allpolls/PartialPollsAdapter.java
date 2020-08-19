@@ -18,30 +18,15 @@ import java.util.Locale;
  */
 public class PartialPollsAdapter extends BaseAdapter {
 
-    List<PartialPoll> polls;
+    // this is the adapter for connecting the UI to the code
 
+    List<PartialPoll> polls;
     Context context;
 
     public PartialPollsAdapter(Context context, List<PartialPoll> polls) {
         this.polls = polls;
         this.context = context;
     }
-
-    @Override
-    public int getCount() {
-        return polls.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return polls.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return polls.get(position).getId();
-    }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -50,19 +35,13 @@ public class PartialPollsAdapter extends BaseAdapter {
         if (convertView == null) {
 
             holder = new ViewHolder();
-
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
             convertView = inflater.inflate(R.layout.partial_polls_item, null);
-
             holder.pollsterView = (TextView) convertView.findViewById(R.id.partial_poll_pollster);
-
             holder.providerView = (TextView) convertView.findViewById(R.id.partial_poll_provider);
-
             holder.lastUpdatedView = (TextView) convertView.findViewById(R.id.partial_poll_last_updated);
 
             convertView.setTag(holder);
-
             convertView.setOnClickListener(getOnClickListener(convertView));
 
 
@@ -76,7 +55,7 @@ public class PartialPollsAdapter extends BaseAdapter {
         holder.pollsterView.setText(poll.getPollster());
         holder.providerView.setText(poll.getProvider());
         holder.lastUpdatedView.setText(
-                new SimpleDateFormat("dd-MM-yyyy", Locale.US).format(poll.getLastUpdated()));
+                new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH).format(poll.getLastUpdated()));
 
         return convertView;
     }
@@ -98,4 +77,19 @@ public class PartialPollsAdapter extends BaseAdapter {
         TextView providerView;
         TextView lastUpdatedView;
     }
+    @Override
+    public int getCount() {
+        return polls.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return polls.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return polls.get(position).getId();
+    }
+
 }

@@ -51,19 +51,6 @@ public class MyPollsFragment extends Fragment {
         return view;
     }
 
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mListener = (OnListMyPollsInteractionListener) getActivity();
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
     @Override
     public void onResume() {
         super.onResume();
@@ -79,5 +66,16 @@ public class MyPollsFragment extends Fragment {
             this.recyclerView.setVisibility(View.GONE);
             getActivity().findViewById(R.id.no_my_polls_label).setVisibility(View.VISIBLE);
         }
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mListener = (OnListMyPollsInteractionListener) getActivity();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
     }
 }
