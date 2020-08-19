@@ -19,7 +19,6 @@ public class PollCalculator {
     public Poll calculateResults(Poll poll) {
 
         List<Map<String, Double>> choicesList = new ArrayList<>();
-
         List<PartialPoll> partialPolls = poll.getPartialPolls();
 
         universalValues = new ArrayList<>();

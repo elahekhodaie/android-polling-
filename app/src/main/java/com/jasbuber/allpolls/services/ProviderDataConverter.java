@@ -10,8 +10,6 @@ import com.jasbuber.allpolls.models.Poll;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -49,13 +47,13 @@ public class ProviderDataConverter {
     private PartialPoll fetchPartialPollData(PartialPoll partial, JsonObject data, String topic) {
 
         try {
-            String unparsedDate = data.get("last_updated").getAsString();
-            if(unparsedDate.contains(".")){
-                partial.setLastUpdated(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS", Locale.US)
-                        .parse(unparsedDate));
+            String unParsedDate = data.get("last_updated").getAsString();
+            if(unParsedDate.contains(".")){
+                partial.setLastUpdated(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS", Locale.ENGLISH)
+                        .parse(unParsedDate));
             }else{
-                partial.setLastUpdated(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US)
-                        .parse(unparsedDate));
+                partial.setLastUpdated(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH)
+                        .parse(unParsedDate));
             }
         } catch (ParseException e) {
             e.printStackTrace();
