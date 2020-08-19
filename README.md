@@ -10,8 +10,4 @@ Server main url address should be provided in PollsService.java.
 ```
 private static final String baseUrl = "server_url";
 ```
-
-# Getting Started
-
-Build and generate apk in a standard android way.
-
+this code is adapted from jasbubers all-polls-android project
